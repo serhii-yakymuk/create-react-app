@@ -133,9 +133,43 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app')],
+                parser: require.resolve('babel-eslint'),
+                  extends: [
+                    require.resolve('eslint-config-standard'),
+                    require.resolve('eslint-config-standard-react'),
+                    require.resolve('@eleks/eslint-config-eleks')
+                  ],
+                  plugins: [
+                    require.resolve('eslint-plugin-babel'),
+                    require.resolve('eslint-plugin-promise'),
+                    require.resolve('eslint-plugin-react')
+                  ],
+                  env: {
+                    browser: true,
+                    commonjs: true,
+                    es6: true,
+                    jest: true,
+                    node: true
+                  },
+                  'rules': {
+                    'indent': ['error', 2, {
+                      'SwitchCase': 1
+                    }],
+                    'no-empty-function': 0,
+                    'no-magic-numbers': 0,
+                    'operator-linebreak': 0,
+                    'react/jsx-uses-react': 1,
+                    'react/jsx-uses-vars': 1,
+                    'react/require-render-return': 2,
+                    'react/jsx-closing-bracket-location': 2,
+                    'react/jsx-curly-spacing': 2,
+                    'react/jsx-boolean-value': 2,
+                    'react/no-string-refs': 2,
+                    'react/jsx-wrap-multilines': 2,
+                    'react/self-closing-comp': 2,
+                    'react/no-is-mounted': 2
+                  }
               },
-              ignore: false,
               useEslintrc: false,
               // @remove-on-eject-end
             },
