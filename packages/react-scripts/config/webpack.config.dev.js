@@ -135,14 +135,14 @@ module.exports = {
               baseConfig: {
                 parser: require.resolve('babel-eslint'),
                   extends: [
-                    require.resolve('eslint-config-standard'),
-                    require.resolve('eslint-config-standard-react'),
-                    require.resolve('@eleks/eslint-config-eleks')
+                    'standard',
+					'standard-react',
+					'@eleks/eleks'
                   ],
                   plugins: [
-                    require.resolve('eslint-plugin-babel'),
-                    require.resolve('eslint-plugin-promise'),
-                    require.resolve('eslint-plugin-react')
+                    'babel',
+					'promise',
+					'react'
                   ],
                   env: {
                     browser: true,
